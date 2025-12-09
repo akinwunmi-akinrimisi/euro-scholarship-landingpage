@@ -60,24 +60,24 @@ const testimonials: Testimonial[] = [
 
 export const Testimonials: React.FC = () => {
   return (
-    <div className="bg-slate-900 py-24 border-t border-slate-800">
+    <div className="bg-slate-900 py-12 md:py-24 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-white sm:text-4xl font-serif">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-white sm:text-4xl font-serif">
             Real Stories, Real Visas
           </h2>
-          <p className="mt-4 text-xl text-slate-400 font-light">
+          <p className="mt-4 text-lg md:text-xl text-slate-400 font-light">
             Success stories from Nigerians who trusted our process.
           </p>
         </div>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((t, i) => (
-            <div key={i} className="bg-slate-800/50 rounded-xl p-8 relative border border-slate-700/50 hover:bg-slate-800 hover:border-slate-600 transition-all duration-300 group">
-              <div className="flex items-center mb-6">
-                <img className="h-14 w-14 rounded-full border-2 border-brand-700 object-cover group-hover:border-brand-500 transition-colors" src={t.avatar} alt={t.name} />
-                <div className="ml-4">
-                  <h4 className="text-lg font-bold text-white font-serif">{t.name}</h4>
-                  <p className="text-xs text-brand-400 font-bold uppercase tracking-wide">{t.role}</p>
+            <div key={i} className="bg-slate-800/50 rounded-xl p-6 md:p-8 relative border border-slate-700/50 hover:bg-slate-800 hover:border-slate-600 transition-all duration-300 group">
+              <div className="flex items-center mb-4 md:mb-6">
+                <img className="h-12 w-12 md:h-14 md:w-14 rounded-full border-2 border-brand-700 object-cover group-hover:border-brand-500 transition-colors" src={t.avatar} alt={t.name} />
+                <div className="ml-3 md:ml-4">
+                  <h4 className="text-base md:text-lg font-bold text-white font-serif">{t.name}</h4>
+                  <p className="text-[10px] md:text-xs text-brand-400 font-bold uppercase tracking-wide">{t.role}</p>
                 </div>
               </div>
               <p className="text-slate-300 text-sm leading-relaxed italic relative z-10 font-light">"{t.quote}"</p>

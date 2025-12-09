@@ -26,18 +26,18 @@ const faqs: FAQItem[] = [
 
 export const FAQ: React.FC = () => {
   return (
-    <div className="bg-white py-20">
+    <div className="bg-white py-12 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-slate-900 text-center mb-16 font-serif">
+        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 text-center mb-10 md:mb-16 font-serif">
           Frequently Asked Questions
         </h2>
-        <dl className="space-y-10 md:grid md:grid-cols-2 md:gap-x-12 md:gap-y-16 md:space-y-0">
+        <dl className="space-y-8 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-12 md:gap-y-16">
           {faqs.map((faq) => (
             <div key={faq.question} className="relative">
-              <dt className="text-lg leading-6 font-bold text-slate-900 font-serif">
+              <dt className="text-base md:text-lg leading-6 font-bold text-slate-900 font-serif">
                 {faq.question}
               </dt>
-              <dd className="mt-3 text-base text-slate-600 leading-relaxed font-light">
+              <dd className="mt-2 md:mt-3 text-sm md:text-base text-slate-600 leading-relaxed font-light">
                 {faq.answer}
               </dd>
             </div>

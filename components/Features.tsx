@@ -51,11 +51,15 @@ export const Features: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {features.map((feature) => (
-            <div key={feature.title} className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-slate-100 hover:shadow-premium transition-all duration-300 group">
-              <div className="flex items-center justify-center h-12 w-12 md:h-14 md:w-14 rounded-lg bg-brand-50 text-brand-700 mb-4 md:mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
-                <feature.icon className="h-6 w-6 md:h-7 md:w-7" aria-hidden="true" />
+            <div key={feature.title} className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-100 hover:shadow-premium hover:-translate-y-1 transition-all duration-500 group">
+              <div className="relative mb-6 inline-block">
+                {/* Decorative background glow */}
+                <div className="absolute inset-0 bg-brand-400 rounded-xl blur-lg opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
+                <div className="relative flex items-center justify-center h-12 w-12 md:h-14 md:w-14 rounded-xl bg-gradient-to-br from-brand-50 to-white border border-brand-100 text-brand-700 shadow-sm group-hover:from-brand-600 group-hover:to-brand-800 group-hover:text-white group-hover:border-transparent transition-all duration-300">
+                  <feature.icon className="h-6 w-6 md:h-7 md:w-7" aria-hidden="true" />
+                </div>
               </div>
-              <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-2 md:mb-3 font-serif">{feature.title}</h3>
+              <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-2 md:mb-3 font-serif group-hover:text-brand-800 transition-colors">{feature.title}</h3>
               <p className="text-slate-600 leading-relaxed text-sm">{feature.description}</p>
             </div>
           ))}

@@ -14,24 +14,27 @@ export const ScholarshipSummaries: React.FC = () => {
 
         <div className="grid gap-6 md:gap-8 md:grid-cols-2">
           {/* Fully Funded Card */}
-          <div className="bg-slate-50 rounded-2xl shadow-sm border border-brand-200 p-6 md:p-8 relative overflow-hidden transition-all hover:shadow-md">
-            <div className="absolute top-0 right-0 bg-brand-700 text-white text-[10px] md:text-xs font-bold px-3 py-1 md:px-4 md:py-1.5 rounded-bl-xl tracking-wide uppercase">
+          <div className="bg-slate-50 rounded-2xl shadow-sm border border-brand-200 p-6 md:p-8 relative overflow-hidden transition-all hover:shadow-premium group">
+            <div className="absolute top-0 right-0 bg-brand-700 text-white text-[10px] md:text-xs font-bold px-3 py-1 md:px-4 md:py-1.5 rounded-bl-xl tracking-wide uppercase shadow-md z-10">
                 Premium Selection
             </div>
             <div className="flex items-center mb-4 md:mb-6">
-              <div className="p-2 md:p-3 bg-brand-100 rounded-full mr-3 md:mr-4">
-                <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-brand-700" />
+              <div className="relative mr-4">
+                 <div className="absolute inset-0 bg-brand-500 rounded-full blur-sm opacity-20 animate-pulse"></div>
+                 <div className="relative p-3 bg-gradient-to-br from-brand-100 to-white border border-brand-200 rounded-full shadow-sm">
+                    <CheckCircle className="w-6 h-6 text-brand-700" />
+                 </div>
               </div>
-              <h3 className="text-xl md:text-2xl font-bold text-slate-900 font-serif">Fully Funded Scholarships</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-slate-900 font-serif group-hover:text-brand-800 transition-colors">Fully Funded Scholarships</h3>
             </div>
             <p className="text-sm md:text-base text-slate-700 mb-4 md:mb-6 leading-relaxed">
               The "Gold Standard" of relocation. These prestige offers cover <strong>100% Tuition, Monthly Stipends (€800-€1200), Health Insurance, and Flights</strong>.
             </p>
-            <ul className="space-y-3 text-xs md:text-sm text-slate-600 mb-6 md:mb-8 border-t border-brand-100 pt-4 md:pt-6">
-              <li className="flex items-start"><span className="w-2 h-2 bg-brand-500 rounded-full mr-3 mt-1.5 flex-shrink-0"></span><span>Waives Proof of Funds at Embassy</span></li>
-              <li className="flex items-start"><span className="w-2 h-2 bg-brand-500 rounded-full mr-3 mt-1.5 flex-shrink-0"></span><span>Suitable for HND & 2:2 holders with experience</span></li>
+            <ul className="space-y-3 text-xs md:text-sm text-slate-600 mb-6 md:mb-8 border-t border-brand-200 pt-4 md:pt-6">
+              <li className="flex items-start"><span className="w-2 h-2 bg-brand-500 rounded-full mr-3 mt-1.5 flex-shrink-0 shadow-sm"></span><span>Waives Proof of Funds at Embassy</span></li>
+              <li className="flex items-start"><span className="w-2 h-2 bg-brand-500 rounded-full mr-3 mt-1.5 flex-shrink-0 shadow-sm"></span><span>Suitable for HND & 2:2 holders with experience</span></li>
             </ul>
-            <div className="bg-white border border-red-100 p-4 rounded-xl flex items-start shadow-sm">
+            <div className="bg-white border border-red-100 p-4 rounded-xl flex items-start shadow-sm hover:border-red-200 transition-colors">
                 <Clock className="w-5 h-5 text-red-600 mr-3 flex-shrink-0 mt-0.5" />
                 <p className="text-xs md:text-sm text-slate-700">
                     <span className="block font-bold text-red-700 mb-1">Time Sensitive</span>
@@ -41,20 +44,23 @@ export const ScholarshipSummaries: React.FC = () => {
           </div>
 
           {/* Partial / Tuition Waiver Card */}
-          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8 transition-all hover:shadow-md">
+          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8 transition-all hover:shadow-premium group">
             <div className="flex items-center mb-4 md:mb-6">
-              <div className="p-2 md:p-3 bg-orange-50 rounded-full mr-3 md:mr-4">
-                <AlertCircle className="w-5 h-5 md:w-6 md:h-6 text-orange-600" />
+              <div className="relative mr-4">
+                 <div className="absolute inset-0 bg-orange-400 rounded-full blur-sm opacity-20"></div>
+                 <div className="relative p-3 bg-gradient-to-br from-orange-50 to-white border border-orange-200 rounded-full shadow-sm">
+                    <AlertCircle className="w-6 h-6 text-orange-600" />
+                 </div>
               </div>
-              <h3 className="text-xl md:text-2xl font-bold text-slate-900 font-serif">Tuition Waivers & Partial Funding</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-slate-900 font-serif group-hover:text-orange-800 transition-colors">Tuition Waivers & Partial Funding</h3>
             </div>
             <p className="text-sm md:text-base text-slate-700 mb-4 md:mb-6 leading-relaxed">
               Ideal for candidates with partial savings. These scholarships remove the significant burden of tuition fees (saving up to €15,000/year).
             </p>
              <ul className="space-y-3 text-xs md:text-sm text-slate-600 mb-6 md:mb-8 border-t border-slate-100 pt-4 md:pt-6">
-              <li className="flex items-start"><span className="w-2 h-2 bg-orange-400 rounded-full mr-3 mt-1.5 flex-shrink-0"></span><span>Zero Tuition Fees</span></li>
-              <li className="flex items-start"><span className="w-2 h-2 bg-orange-400 rounded-full mr-3 mt-1.5 flex-shrink-0"></span><span>Student covers only living expenses</span></li>
-              <li className="flex items-start"><span className="w-2 h-2 bg-orange-400 rounded-full mr-3 mt-1.5 flex-shrink-0"></span><span>High acceptance rate for international students</span></li>
+              <li className="flex items-start"><span className="w-2 h-2 bg-orange-400 rounded-full mr-3 mt-1.5 flex-shrink-0 shadow-sm"></span><span>Zero Tuition Fees</span></li>
+              <li className="flex items-start"><span className="w-2 h-2 bg-orange-400 rounded-full mr-3 mt-1.5 flex-shrink-0 shadow-sm"></span><span>Student covers only living expenses</span></li>
+              <li className="flex items-start"><span className="w-2 h-2 bg-orange-400 rounded-full mr-3 mt-1.5 flex-shrink-0 shadow-sm"></span><span>High acceptance rate for international students</span></li>
             </ul>
             <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
                 <p className="text-xs md:text-sm text-slate-700 font-medium">

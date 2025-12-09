@@ -72,12 +72,16 @@ export const Testimonials: React.FC = () => {
         </div>
         <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((t, i) => (
-            <div key={i} className="bg-slate-800/50 rounded-xl p-6 md:p-8 relative border border-slate-700/50 hover:bg-slate-800 hover:border-slate-600 transition-all duration-300 group">
+            <div key={i} className="bg-slate-800/50 rounded-xl p-6 md:p-8 relative border border-slate-700 hover:border-brand-500/50 hover:bg-slate-800 hover:shadow-glow transition-all duration-300 group">
               <div className="flex items-center mb-4 md:mb-6">
-                <img className="h-12 w-12 md:h-14 md:w-14 rounded-full border-2 border-brand-700 object-cover group-hover:border-brand-500 transition-colors" src={t.avatar} alt={t.name} />
+                <div className="relative">
+                  <div className="absolute inset-0 bg-brand-500 rounded-full blur opacity-40 group-hover:opacity-80 transition-opacity"></div>
+                  <img className="relative h-12 w-12 md:h-14 md:w-14 rounded-full border-2 border-brand-700 group-hover:border-brand-500 object-cover transition-colors" src={t.avatar} alt={t.name} />
+                </div>
                 <div className="ml-3 md:ml-4">
                   <h4 className="text-base md:text-lg font-bold text-white font-serif">{t.name}</h4>
-                  <p className="text-[10px] md:text-xs text-brand-400 font-bold uppercase tracking-wide">{t.role}</p>
+                  {/* Updated color to brand-200 for visibility */}
+                  <p className="text-[10px] md:text-xs text-brand-200 font-bold uppercase tracking-wide opacity-90">{t.role}</p>
                 </div>
               </div>
               <p className="text-slate-300 text-sm leading-relaxed italic relative z-10 font-light">"{t.quote}"</p>

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FAQItem } from '../types';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const faqs: FAQItem[] = [
   {
@@ -25,24 +26,48 @@ const faqs: FAQItem[] = [
 ];
 
 export const FAQ: React.FC = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleFAQ = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
     <div className="bg-white py-12 md:py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-2xl md:text-3xl font-bold text-slate-900 text-center mb-10 md:mb-16 font-serif">
           Frequently Asked Questions
         </h2>
-        <dl className="space-y-8 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-12 md:gap-y-16">
-          {faqs.map((faq) => (
-            <div key={faq.question} className="relative">
-              <dt className="text-base md:text-lg leading-6 font-bold text-slate-900 font-serif">
-                {faq.question}
-              </dt>
-              <dd className="mt-2 md:mt-3 text-sm md:text-base text-slate-600 leading-relaxed font-light">
-                {faq.answer}
-              </dd>
+        <div className="space-y-4">
+          {faqs.map((faq, index) => (
+            <div 
+              key={index} 
+              className={`border border-slate-200 rounded-xl overflow-hidden transition-all duration-300 ${openIndex === index ? 'bg-brand-50 border-brand-200 shadow-sm' : 'bg-white hover:border-brand-200'}`}
+            >
+              <button
+                onClick={() => toggleFAQ(index)}
+                className="w-full flex justify-between items-center p-5 text-left focus:outline-none"
+              >
+                <span className={`text-base md:text-lg font-bold font-serif ${openIndex === index ? 'text-brand-800' : 'text-slate-900'}`}>
+                  {faq.question}
+                </span>
+                {openIndex === index ? (
+                  <ChevronUp className="w-5 h-5 text-brand-600 flex-shrink-0 transition-transform" />
+                ) : (
+                  <ChevronDown className="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform" />
+                )}
+              </button>
+              
+              <div 
+                className={`transition-all duration-300 ease-in-out overflow-hidden ${openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+              >
+                <div className="p-5 pt-0 text-sm md:text-base text-slate-600 leading-relaxed font-light border-t border-brand-100/50 mt-2">
+                  {faq.answer}
+                </div>
+              </div>
             </div>
           ))}
-        </dl>
+        </div>
       </div>
     </div>
   );

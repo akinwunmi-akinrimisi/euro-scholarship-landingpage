@@ -8,6 +8,7 @@ import { Pricing } from './components/Pricing';
 import { FAQ } from './components/FAQ';
 import { CountdownTimer } from './components/CountdownTimer';
 import { PurchaseNotification } from './components/PurchaseNotification';
+import { RevealOnScroll } from './components/RevealOnScroll';
 import { GraduationCap } from 'lucide-react';
 
 const App: React.FC = () => {
@@ -40,12 +41,30 @@ const App: React.FC = () => {
 
       <main>
         <Hero />
-        <Features />
-        <UniversityLogos />
-        <Testimonials />
-        <ScholarshipSummaries />
-        <Pricing />
-        <FAQ />
+        
+        <RevealOnScroll direction="from-bottom">
+          <Features />
+        </RevealOnScroll>
+        
+        <RevealOnScroll direction="from-bottom">
+          <UniversityLogos />
+        </RevealOnScroll>
+        
+        <RevealOnScroll direction="from-right">
+          <Testimonials />
+        </RevealOnScroll>
+        
+        <RevealOnScroll direction="from-left">
+          <ScholarshipSummaries />
+        </RevealOnScroll>
+        
+        <RevealOnScroll direction="from-bottom">
+          <Pricing />
+        </RevealOnScroll>
+        
+        <RevealOnScroll direction="from-bottom">
+          <FAQ />
+        </RevealOnScroll>
       </main>
 
       <PurchaseNotification />
